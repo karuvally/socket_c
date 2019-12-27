@@ -14,11 +14,12 @@ int main()
 	test_ptr = malloc(16);
 
 	// debug
-	*test_ptr = "Hello World\n";
-	printf("%s\n", *test_ptr);
+	strcpy(test_ptr, "This works!");
+	printf("%s\n", test_ptr);
 
 	// fill the shiny new memory locations with zero
-	memset(test_ptr, 0, 16);
+	memset(test_ptr, '0', 12);
+	printf("%s\n", test_ptr);
 
 	// return zero like all those cool programs 
 	return 0;
