@@ -1,3 +1,3 @@
 default:
 	gcc memset_try.c -o memset_try
-	gcc address.c -o address
+	gcc address.c -g -o address
