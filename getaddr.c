@@ -1,6 +1,8 @@
 // include the serious stuff
 #include<stdio.h>
 #include<arpa/inet.h>
+#include<netdb.h>
+#include<string.h>
 
 // the main function
 int main()
@@ -8,8 +10,17 @@ int main()
 	// essential variables
 	struct addrinfo hints, *result;
 
-	// get IP info
-	
+	// initialize hints to zero
+	memset(&hints, 0, sizeof(hints));
+
+	// setup specification
+	hints.ai_family = PF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags |= AI_CANONNAME;
+
+	// try to get the address
+	getaddrinfo("ThinkPad-L440", NULL, &hints, &result);
+
 
 	// return zero like a gentle program
 	return 0;
