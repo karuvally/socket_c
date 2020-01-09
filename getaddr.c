@@ -21,6 +21,11 @@ int main()
 	// try to get the address
 	getaddrinfo("ThinkPad-L440", NULL, &hints, &result);
 
+	// quit if result is invalid
+	if(result == NULL) {
+		printf("FATAL: Could not retrieve address");
+		exit(1)
+	}
 
 	// return zero like a gentle program
 	return 0;
