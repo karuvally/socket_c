@@ -11,6 +11,7 @@ int main()
 	// essential variables
 	struct addrinfo hints, *result;
 	char addr_str[100];
+	void result_in;
 
 	// initialize hints to zero
 	memset(&hints, 0, sizeof(hints));
