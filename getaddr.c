@@ -9,6 +9,7 @@ int main()
 {
 	// essential variables
 	struct addrinfo hints, *result;
+	char addr_str[100];
 
 	// initialize hints to zero
 	memset(&hints, 0, sizeof(hints));
@@ -24,8 +25,11 @@ int main()
 	// quit if result is invalid
 	if(result == NULL) {
 		printf("FATAL: Could not retrieve address");
-		exit(1)
+		exit(1);
 	}
+
+	// convert data to presentation style
+	inet_ntop(result->ai_family, result->ai_addr->sa_data, addr_str, 100);
 
 	// return zero like a gentle program
 	return 0;
